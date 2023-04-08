@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import GlobalContextProvider from "./Components/context/GlobalContext";
+import Footer from "./Components/Layouts/Footer/Footer";
+import Navbar from "./Components/Layouts/Navbar/Navbar";
+import DentistasContainer from "./Components/Pages/Dentistas/DentistasContainer";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
-
-export default App
+return (
+  <BrowserRouter>
+    <GlobalContextProvider>
+      <Routes>
+        <Route element={<Navbar />}>
+          <Route element={<Footer />}>
+            <Route path="/" element={<h1>home</h1>} />
+            <Route path="/dentistas" element={<DentistasContainer/>} />
+            <Route path="/dentista/:id" element={<h1>Especialista</h1>} />
+            <Route path="/contacto" element={<h1>Form de sugerencias</h1>} />
+            <Route path="/favoritos" element={<h1>acá van los Favoritos</h1>} />
+          </Route>
+        </Route>
+      </Routes>
+    </GlobalContextProvider>
+  </BrowserRouter>
+);
+    }
+export default App;
