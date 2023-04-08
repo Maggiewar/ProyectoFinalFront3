@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 
 const DentistasContainer = () => {

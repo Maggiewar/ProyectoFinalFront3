@@ -1,12 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./Home.css";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { GlobalContext } from "../../context/GlobalContext";
 
 const Home = () => {
-  return (
-    <div>
-        <link to="dentistas"></link>
-        Home</div>
-  )
-}
+  const { state } = useContext(GlobalContext);
 
-export default Home
+  return (
+    <div Classname={state.isDark ? "container-dark" : "container-light"}>
+      <Link to="dentistas">Ver especialistas</Link>
+    </div>
+  );
+};
+
+export default Home;

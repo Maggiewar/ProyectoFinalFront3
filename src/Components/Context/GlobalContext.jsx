@@ -4,6 +4,7 @@ export const GlobalContext = createContext()
 
 const initialState = {
     dentistas: [],
+    dentista: {},
     isDark: false,
     favoritos: [],
 }
