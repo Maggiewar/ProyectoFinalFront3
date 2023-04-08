@@ -13,7 +13,7 @@ const DentistasContainer = () => {
       .catch((err) => console.log(err));
   }, {});
 
-  console.log(state.users);
+  console.log(state.dentistas);
 
   return (
     <div>

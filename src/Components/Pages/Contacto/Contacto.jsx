@@ -1,13 +1,13 @@
 import React from "react";
 
-const Form = () => {
+const Contacto = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <form className="container" name="Iniciar Sesión">
+      <form className="container" name="contacto">
         <label htmlFor="">
           Nombre
-          <br />    
-          <input type="text" />
+          <br />
+          <input type="text" />{" "}
         </label>
         <br />
         <label htmlFor="">
@@ -16,17 +16,27 @@ const Form = () => {
           <input type="number" />
         </label>
         <br />
-        <select name="Perfil" id="">
+        <select name="Perfil" id="tipo de suscripción">
+          <br />
+          <label htmlFor="">Tipo de suscripción
+          </label>
+          <br />
           <option value="">Afiliado</option>
           <option value="">Independiente</option>
           <option value="">Plan Complementario</option>
-          <option value="">Especialistas en Odontológicos</option>
         </select>
-        <button type="submit">Iniciar Sesión</button>
+        <br />
+        <label htmlFor="">
+          <br />
+          Comentario
+          <br />
+          <input type="text" />{" "}
+        </label>
+        <button type="submit">Enviar</button>
       </form>
       Form
     </div>
   );
 };
 
-export default Form;
+export default Contacto;

@@ -4,11 +4,11 @@ import { Outlet } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <h2>Este es el navbar</h2>
+      <h2>SOLUCIONES DENTALES</h2>
       <ul>
-        <li>contacto</li>
-        <li>favoritos</li>
-        <li>algo más</li>
+        <li>menú</li>
+        <li>Tratamientos</li>
+        <li>Agenda tu cita</li>
       </ul>
       <Outlet />
     </div>
