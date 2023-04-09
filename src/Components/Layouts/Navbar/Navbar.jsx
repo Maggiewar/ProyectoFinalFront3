@@ -19,6 +19,8 @@ const Navbar =() =>{
         onChange={handleChange}
         inputProps={{ "aria-label": "controlled" }}
       />
+
+      <Link to="/favoritos">Ir a Favoritos</Link>
       <div style={{ minHeight: "80vh" }}>
         <ul>
           <li>Menú</li>

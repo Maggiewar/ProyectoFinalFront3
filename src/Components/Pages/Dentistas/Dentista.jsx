@@ -47,7 +47,13 @@ const Dentista = ({ dentistas, dispatch }) => {
                   dispatch({ type: "HANSLE_FAVORITE", payload: dentista })
                 }
               >
-                <FavoriteIcon color="disabled" />
+                <FavoriteIcon
+                  color={
+                    Favoritos.some((favoritos) => favoritos.id === dentista.id)
+                      ? "error"
+                      : "disabled"
+                  }
+                />
               </IconButton>
               <Link to={"/dentista/${dentista.id}"}>
                 <Button variant="contained">Ver detalle</Button>

@@ -6,7 +6,13 @@ const initialState = {
   dentistas: [],
   dentista: {},
   isDark: false,
-  favoritos: [],
+  favoritos: JSON.parse(localStorage.getItem("favoritos")) || [],
+};
+
+const removeFavorite = (id, state) => {
+  const newArr = state.favoritos.filter((favoritos) => favoritos.id !== id);
+  localStorage.setItem("favoritos", JSON.stringify(newArr));
+  return newArr;
 };
 
 const globalReducer = (state, action) => {
@@ -19,12 +25,14 @@ const globalReducer = (state, action) => {
       const isInFavorite = state.favoritos.some(
         (favoritos) => favoritos.id === action.payload.id
       );
-      const newArr = state.favoritos.filter(
-        (favoritos) => favoritos.id !== action.payload
-      );
-
+      isInFavorite
+        ? removeFavorite(action.payload.id, state)
+        : localStorage.setItem(
+            "favorites",
+            JSON.stringify([...state.favoritos, action.payload])
+          );
       return isInFavorite
-        ? { ...state, favoritos: newArr }
+        ? { ...state, favoritos: removeFavorite(action.payload.id, state) }
         : { ...state, favoritos: [...state.favoritos, action.payload] };
     case "SWITCH_MODE":
       return { ...state, isDark: !state.isDark };
