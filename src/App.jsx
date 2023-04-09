@@ -4,6 +4,7 @@ import Footer from "./Components/Layouts/Footer/Footer";
 import Navbar from "./Components/Layouts/Navbar/Navbar";
 import DentistasContainer from "./Components/Pages/Dentistas/DentistasContainer";
 import Contacto from "./Components/Pages/Contacto/Contacto";
+import EspecialistaContainer from "./Components/Pages/Dentista/EspecialistaContainer";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             <Route element={<Footer />}>
               <Route path="/" element={<h1>SOLUCIONES DENTALES</h1>} />
               <Route path="/dentistas" element={<DentistasContainer />} />
-              <Route path="/dentista/:id" element={<h1>Especialista</h1>} />
+              <Route path="/dentista/:id" element={<EspecialistaContainer />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/favoritos" element={<h1>Favoritos</h1>} />
             </Route>

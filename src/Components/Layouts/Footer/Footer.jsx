@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <div>
       <Outlet />
-      <h1>Podemos ayudarte, llámanos</h1>
-      <h2>ESTUDIO COMPLETO Y DIAGNÓSTICO GRATIS</h2>
+      <h2>Podemos ayudarte, llámanos</h2>
+      <h3>ESTUDIO COMPLETO Y DIAGNÓSTICO GRATIS</h3>
     </div>
   );
 };

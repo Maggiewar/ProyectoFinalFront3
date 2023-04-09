@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
+import Dentista from "./Dentista";
 
 const DentistasContainer = () => {
   const { state, dispatch } = useContext(GlobalContext);
@@ -17,7 +18,7 @@ const DentistasContainer = () => {
 
   return (
     <div>
-      <h2>Acá va la lista de dentistas</h2>
+      <Dentista dentistas={state.dentistas} dispatch={dispatch} favoritos={state.favoritos}/>
     </div>
   );
 };
